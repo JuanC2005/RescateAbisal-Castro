@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class BatterySystem : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class BatterySystem : MonoBehaviour
     {
         currentBattery = maxBattery;
         
-        // Nos aseguramos de que al iniciar el juego el panel de Game Over esté apagado
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -28,7 +28,6 @@ public class BatterySystem : MonoBehaviour
     {
         float currentDrain = drainRate;
 
-        // Si presionamos Shift, gastamos más batería
         if (Keyboard.current != null && Keyboard.current.shiftKey.isPressed)
         {
             currentDrain *= boostDrainMultiplier;
@@ -36,13 +35,11 @@ public class BatterySystem : MonoBehaviour
 
         currentBattery -= currentDrain * Time.deltaTime;
 
-        // Actualizamos la barrita visual en tiempo real
         if (batterySlider != null)
         {
             batterySlider.value = currentBattery / maxBattery;
         }
 
-        // Si la batería llega a cero, activamos el Game Over
         if (currentBattery <= 0)
         {
             currentBattery = 0;
@@ -56,7 +53,13 @@ public class BatterySystem : MonoBehaviour
         
         if (gameOverPanel != null)
         {
-            gameOverPanel.SetActive(true); // ¡Aquí encendemos el panel!
+            gameOverPanel.SetActive(true);
         }
+    }
+
+    public void ReiniciarJuego()
+    {
+        // Recarga la escena actual desde cero
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
