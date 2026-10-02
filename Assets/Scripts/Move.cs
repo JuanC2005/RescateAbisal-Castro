@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy_Move : MonoBehaviour
+public class Move : MonoBehaviour
 {
     [SerializeField] float amplitud = 0.5f; // Qué tanto sube y baja
     [SerializeField] float velocidad = 2f;  // Qué tan rápido se mueve

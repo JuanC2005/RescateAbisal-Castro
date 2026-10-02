@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -116,12 +116,12 @@ TextureImporter:
       name: Piedra_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 496
-        height: 496
+        x: 73
+        y: 71
+        width: 355
+        height: 361
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 293c5fed429b0cd45a3f3fcd45b363e0
     internalID: 0
     vertices: []
     indices: 

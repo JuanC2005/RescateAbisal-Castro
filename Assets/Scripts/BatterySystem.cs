@@ -46,6 +46,22 @@ public class BatterySystem : MonoBehaviour
             GameOver();
         }
     }
+    public void RecargarEnergia(float energiaQueOtorga)
+    {
+        currentBattery+=energiaQueOtorga;
+        if (currentBattery >= maxBattery)
+        {
+            currentBattery=maxBattery;
+        }
+    }
+    public void RestarEnergia(float energiaQueQuita)
+    {
+        currentBattery-=energiaQueQuita;
+        if (currentBattery < 0)
+    {
+        currentBattery = 0;
+    }
+    }
 
     void GameOver()
     {
